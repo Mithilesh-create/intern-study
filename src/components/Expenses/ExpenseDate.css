@@ -1,0 +1,25 @@
+.date_div{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    width: 10%;
+    height:auto;
+    min-height: 70%;
+    color: white;
+    border: 1px solid white;
+    background-color:black;
+    padding: 8px;
+    border-radius:8px;
+}
+.expense_month{
+    font-size:14px;
+    font-weight:bold;
+}
+.expense_year{
+    font-size:10px;
+}
+.expense_day{
+    font-size:20px;
+    font-weight: bold;
+}

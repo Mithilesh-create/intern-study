@@ -1,0 +1,21 @@
+.outer_display_card {
+  width: 80%;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.display_list {
+  width: 90%;
+  height: 20%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.display_list span {
+  font-size: 24px;
+}
+.display_list p {
+  font-weight: bold;
+}

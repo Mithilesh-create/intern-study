@@ -1,0 +1,56 @@
+.list_items_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  min-height: 80%;
+  width: 80%;
+  background-color: black;
+  max-height: auto;
+  color: white;
+}
+.list_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  width: 80%;
+  height: 15%;
+  margin: 8px;
+  background-color: hsl(0, 0%, 20%);
+}
+.expense_title {
+  width: 60%;
+}
+.expense_amount {
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+  height: 60%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expense_empty_message {
+  color: white;
+}
+.expense_drop_year {
+  outline: none;
+  margin: 5px;
+  width:60px;
+  height:40px;
+  cursor: pointer;
+  border-radius: 5px;
+  color:white;
+  border: 1px solid white;
+  background-color:black;
+  text-align: center;
+}
+.expense_drop_year option {
+  /* background-color: red; */
+  color:white; 
+  background-color:black;
+  text-align: center;
+}
