@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 15%;
+  background-color: slateblue;
+}
+.LogoHere {
+  font-size: 34px;
+  font-family: 'Satisfy', cursive;
+}

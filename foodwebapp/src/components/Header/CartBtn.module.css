@@ -1,0 +1,21 @@
+.cartBtn {
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 18px;
+  background-color: saddlebrown;
+}
+.cartBtn:active {
+  background-color: hsl(25, 76%, 41%);
+}
+.badge_items {
+  font-weight: bold;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 5px;
+}
+.badge_items:active {
+  background-color: hsl(0, 0%, 60%);
+}
