@@ -1,0 +1,28 @@
+.main_container {
+  width: 100%;
+  height: 60vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 60px;
+}
+.frwd {
+  width: 80%;
+  height: 20vh;
+  background-color: grey;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bkwd {
+  border-radius: 15px;
+  width: 80%;
+  height: 20vh;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,7 +1,11 @@
+import "./App.css";
+import Forward from "./components/Forward"
+import Backward from "./components/Backward"
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="main_container">
+      <Forward/>
+      <Backward/>
     </div>
   )
 }

@@ -1,0 +1,101 @@
+.main_container {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.display_data{
+  margin-top:10vh;
+  width: 80%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: slategray;
+  border-radius: 10px;
+  color: white;
+}
+.movie_container{
+  background-color: slateblue;
+  color: white;
+  width: 80%;
+  height: auto;
+  min-height: 15vh;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.inputfield {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: slategray;
+  color: white;
+  width: 80%;
+  height: 50vh;
+  font-size: 22px;
+  border-radius: 10px;
+}
+.get_btn {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: slategray;
+  width: 80%;
+  height: 20vh;
+  border-radius: 10px;
+}
+.inputfield div {
+  width: 40%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inputfield div input {
+  font-size: 20px;
+  outline: none;
+  border: none;
+  padding: 2px;
+}
+.getdatabtn {
+  width: 40%;
+  height: 40%;
+}
+.getdatabtn button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 3px solid white;
+  color: white;
+  font-size: 20px;
+  font-family: Helvetica;
+  cursor: pointer;
+  background-color: seagreen;
+  border-radius: 15px;
+}
+.getdatabtn button:active {
+  background-color: hsl(146, 50%, 56%);
+}
+.inputfield div button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 3px solid white;
+  color: white;
+  font-size: 20px;
+  font-family: Helvetica;
+  cursor: pointer;
+  background-color: seagreen;
+  border-radius: 15px;
+}
+.inputfield div button:active {
+  background-color: hsl(146, 50%, 56%);
+}
