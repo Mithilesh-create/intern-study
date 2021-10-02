@@ -1,0 +1,61 @@
+.form {
+  width: 80%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+.formArea {
+  width: 70%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.formArea input {
+  font-size: 20px;
+  width: 70%;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+}
+.formArea label {
+  font-weight: bold;
+  font-size: 24px;
+}
+.formBtnArea {
+  width: 50%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btnformCancel {
+  width: 40%;
+  height: 100%;
+  background-color: hsl(200, 47%, 55%);
+  font-size: 20px;
+}
+.btnformCancel:active {
+  background-color: hsl(200, 47%, 75%);
+}
+.btnformSubmit {
+  width: 40%;
+  height: 100%;
+  background-color: tomato;
+  font-size: 20px;
+}
+.btnformSubmit:active {
+  background-color: hsl(9, 100%, 74%);
+}
+.error input {
+  border: 2px solid red;
+}
+.error label {
+  color: white;
+}
+.error {
+  color: hsl(0, 100%, 35%);
+}

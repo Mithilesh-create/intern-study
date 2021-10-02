@@ -1,19 +1,55 @@
+import { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import classes from "./FoodList.module.css";
 import FoodListItem from "./FoodListItem";
 function FoodList() {
-  const Dummy_data = [
-    { id: "m1", name: "Sushi", description: "Great Japanese Dish", price: "2.99" },
-    { id: "m2", name: "Fried Fish", description: "Marinated And Smoked", price: "5.99" },
-    { id: "m3", name: "Rice Curry", description: "Spicey Gravy with Yogurt", price: "12.99" },
-    { id: "m4", name: "Palak Paneer", description: "Soft Cottage Cubes", price: "14.99" },
-  ];
+  const [Dummy_data, setDummy_data] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
+  const [isError, setisError] = useState(false);
+  useEffect(() => {
+    const fetchDataFun = async () => {
+      try {
+        setisLoading(true);
+        setisError(false);
+        const res = await fetch(
+          "https://foodmenu-9b4cf-default-rtdb.firebaseio.com/foodmenu.json"
+        );
+        if (res.ok) {
+        setisLoading(false);
+          const response = await res.json();
+          const resArr = [];
+          for (const key in response) {
+            resArr.push({
+              id: key,
+              name: response[key].name,
+              description: response[key].description,
+              price: response[key].price,
+            });
+          }
+          setDummy_data(resArr);
+        } else {
+          setisLoading(false);
+          setisError(true);
+        }
+      } catch (error) {
+        console.log(error);
+        setisLoading(false);
+        setisError(true);
+      }
+    };
+    fetchDataFun();
+  }, []);
   return (
-    <Card className={classes.foodContainer}>
-      {Dummy_data.map((e) => {
-        return <FoodListItem key={e.id} data={e} />;
-      })}
-    </Card>
+    <>
+      <Card className={classes.foodContainer}>
+        {!isLoading &&
+          Dummy_data.map((e) => {
+            return <FoodListItem key={e.id} data={e} />;
+          })}
+        {isLoading && <p>is Loading...</p>}
+        {isError && <p>Something Went Wrong...</p>}
+      </Card>
+    </>
   );
 }
 

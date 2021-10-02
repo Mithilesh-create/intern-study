@@ -3,21 +3,51 @@ import Card from "../UI/Card";
 import CartItems from "./CartItems";
 import Button from "../UI/Button";
 import ReactDOM from "react-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import FoodCartContext from "../store/cart-context";
+import CartForm from "./CartForm";
 const Backdrop = (props) => {
-  return <div className={classes.backDrop}></div>;
+  return <div className={classes.backDrop} onClick={props.onClick}></div>;
 };
 const ModalOverlay = (props) => {
+  const [show, setshow] = useState(false);
+  const [Order, setOrder] = useState(false);
   const ctx = useContext(FoodCartContext);
-  const totalAmountFixed=ctx.totalAmount.toFixed(2);
+  const totalAmountFixed = ctx.totalAmount.toFixed(2);
+
+  const handlePost = async (data) => {
+    const ordData = {
+      orderItems: ctx.items,
+      data,
+      totalAmount: totalAmountFixed,
+    };
+    const res = await fetch(
+      "https://foodmenu-9b4cf-default-rtdb.firebaseio.com/foodorder.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ordData),
+      }
+    );
+    if (res.ok) {
+      setOrder(true);
+      setshow(false);
+    }
+  };
+
   return (
     <>
       <Card className={classes.cartModal}>
         <form action="" className={classes.cart_form}>
-          {ctx.items.map((e) => {
-            return <CartItems key={e.id} data={e} />;
-          })}
+          {!Order && (
+            <div className={classes.overflowArea}>
+              {ctx.items.map((e) => {
+                return <CartItems key={e.id} data={e} />;
+              })}
+            </div>
+          )}
           <div className={classes.shopping_amount}>
             <span>Total Amount</span>
             <span className={classes.shopping_total_amount}>
@@ -25,14 +55,32 @@ const ModalOverlay = (props) => {
             </span>
           </div>
         </form>
-        <div className={classes.cart_order_div}>
-          <Button className={classes.close_btn} onClick={props.onRemoveModal}>
-            Close
-          </Button>
-          {ctx.items.length !== 0 ? (
-            <Button className={classes.order_btn} onClick={()=>{console.log("Ordering....");}}>Order</Button>
-          ) : null}
-        </div>
+        {show && (
+          <CartForm
+            onCloseModal={props.onRemoveModal}
+            onSendData={handlePost}
+          />
+        )}
+        {Order && (
+          <p className={classes.orderPlaced}>Order Placed Successfully</p>
+        )}
+        {!show && (
+          <div className={classes.cart_order_div}>
+            <Button className={classes.close_btn} onClick={props.onRemoveModal}>
+              Close
+            </Button>
+            {ctx.items.length !== 0 && !Order ? (
+              <Button
+                className={classes.order_btn}
+                onClick={() => {
+                  setshow(true);
+                }}
+              >
+                Order
+              </Button>
+            ) : null}
+          </div>
+        )}
       </Card>
     </>
   );
@@ -44,7 +92,7 @@ function CartModal(props) {
   };
   return (
     <>
-      {ReactDOM.createPortal(<Backdrop />, getAccess)}
+      {ReactDOM.createPortal(<Backdrop onClick={handelModal} />, getAccess)}
       {ReactDOM.createPortal(
         <ModalOverlay onRemoveModal={handelModal} />,
         getAccess
