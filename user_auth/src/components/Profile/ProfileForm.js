@@ -12,7 +12,7 @@ const ProfileForm = () => {
     const newpassword = passRef.current.value;
     try {
       const response = await fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAcnVGw9hcUDAxOdj8J5da0gQNgUQMOH94",
+        "https://identitytoolkit.googleapis.com/v1/accounts:update?key=",
         {
           method: "POST",
           headers: {
