@@ -2,10 +2,11 @@ import MainNavigation from "../MainNavigation";
 
 function Layout(props) {
   return (
-    <>
+    <div className="mainArea">
       <MainNavigation />
-      <div>{props.children}</div>
-    </>
+      <br />
+      <div className="centered">{props.children}</div>
+    </div>
   );
 }
 
