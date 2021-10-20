@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: #ddd;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+}
+.mainArea {
+  width: 50%;
+  height: 100%;
+}
+.mainAreaModal {
+  background: hsl(0, 0%, 75%);
+  width: 50%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  text-align: center;
+}
+.mainAreaModal div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.item {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: hsl(0, 0%, 75%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; */
+}
+.items {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.behind {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 20%, 0.5);
+}
